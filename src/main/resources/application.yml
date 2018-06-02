@@ -1,0 +1,33 @@
+server:
+  port: 9090
+  tomcat:
+    uri-encoding: utf-8
+    accesslog:
+      enabled: true
+    basedir: tomcat
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.11.101:3306/hadoop_cloud?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    password: 888888
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+  cache:
+    type: ehcache
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  jackson:
+    serialization:
+      indent-output: true
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+hdfs:
+  defaultfs: fs.defaultFS
+  host: hdfs://192.168.11.100:9000
